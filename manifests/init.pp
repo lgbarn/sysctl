@@ -11,16 +11,18 @@
 # Sample Usage:
 #
 class sysctl {
-file { '/etc/sysctl.conf':
+file { 'sysctl_conf':
   ensure  => 'file',
   group   => '0',
   mode    => '644',
   owner   => '0',
+  path => "/etc/sysctl.conf",
 }
 
-  exec { "/sbin/sysctl -p":
-    alias       => "sysctl",
+  exec { 'sysctl':
+    command     => 'sysctl -p',
     refreshonly => true,
-    subscribe   => File["/etc/sysctl.conf"],
+    path        => "/sbin/",
+    subscribe   => File['sysctl_conf'],
   }
 }
