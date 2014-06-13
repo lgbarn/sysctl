@@ -15,8 +15,8 @@
   "license": "MIT",
   "name": "lgbarn-sysctl",
   "project_page": "",
-  "source": "none",
+  "source": "git@github.com:lgbarn/sysctl.git",
   "summary": "Module to control sysctl entries",
   "types": [],
-  "version": "0.1.0"
+  "version": "0.1.2"
 }
