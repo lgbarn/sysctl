@@ -18,9 +18,9 @@ file { '/etc/sysctl.conf':
   owner   => '0',
 }
 
-  exec { "sysctl -p":
+  exec { "/sbin/sysctl -p":
     alias       => "sysctl",
     refreshonly => true,
-    subscribe   => File["sysctl_conf"],
+    subscribe   => File["/etc/sysctl.conf"],
   }
 }
