@@ -1,0 +1,22 @@
+{
+  "author": "Luther Barnum",
+  "checksums": {
+    "Modulefile": "e7333fd1d2eb54645fc7ac47a45aa65d",
+    "README.markdown": "de5f5a0a8fccae217174676ab964de18",
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests\\conf.pp": "815b742a7efd89362eb67eea50e3c574",
+    "manifests\\init.pp": "4e183e79f2d2c45a5b3a58b2b72bc8a9",
+    "spec\\spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec\\spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "tests\\init.pp": "c37e60752d6d23d542b366fe25d03e52"
+  },
+  "dependencies": [],
+  "description": "Module to control sysctl entries",
+  "license": "MIT",
+  "name": "lgbarn-sysctl",
+  "project_page": "",
+  "source": "none",
+  "summary": "Module to control sysctl entries",
+  "types": [],
+  "version": "0.1.0"
+}
