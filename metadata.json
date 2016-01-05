@@ -17,6 +17,5 @@
   "project_page": "",
   "source": "git@github.com:lgbarn/sysctl.git",
   "summary": "Module to control sysctl entries",
-  "types": [],
   "version": "0.1.2"
 }
