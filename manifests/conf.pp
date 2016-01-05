@@ -6,13 +6,13 @@ define sysctl::conf ($value) {
   # guid of this entry
   $key = $title
 
-  $context = "/files/etc/sysctl.conf"
+  $context = '/files/etc/sysctl.conf'
 
-  augeas { "sysctl_conf/$key":
-    context => "$context",
-    onlyif  => "get $key != '$value'",
-    changes => "set $key '$value'",
-    notify  => Exec["sysctl"],
+  augeas { "sysctl_conf/${key}":
+    context => $context,
+    onlyif  => "get ${key} != '${value}'",
+    changes => "set ${key} '${value}'",
+    notify  => Exec['sysctl'],
   }
 
 }
