@@ -1,0 +1,6 @@
+fixtures:
+  forge modules:
+    "stdlib": "puppetlabs/stdlib"
+    "staging": "manliu/staging"
+  symlinks:
+    "sysctl": "#{source_dir}"
