@@ -12,17 +12,17 @@
 #
 class sysctl {
 file { 'sysctl_conf':
-  ensure  => 'file',
-  group   => '0',
-  mode    => '644',
-  owner   => '0',
-  path => "/etc/sysctl.conf",
+  ensure => 'file',
+  group  => '0',
+  mode   => '0644',
+  owner  => '0',
+  path   => '/etc/sysctl.conf',
 }
 
   exec { 'sysctl':
     command     => 'sysctl -p',
     refreshonly => true,
-    path        => "/sbin/",
+    path        => '/sbin/',
     subscribe   => File['sysctl_conf'],
   }
 }
