@@ -1,0 +1,6 @@
+log/
+.vagrant
+.project/*
+pkg/
+spec/fixtures/
+Gemfile.lock
