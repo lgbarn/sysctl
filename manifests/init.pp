@@ -10,19 +10,20 @@
 #
 # Sample Usage:
 #
-class sysctl {
-file { 'sysctl_conf':
-  ensure => 'file',
-  group  => '0',
-  mode   => '0644',
-  owner  => '0',
-  path   => '/etc/sysctl.conf',
-}
+class sysctl (
+  $service_ensure           = $::sysctl::params::service_ensure,
+  $service_enable           = $::sysctl::params::service_enable,
+  $service_name             = $::sysctl::params::service_name,
+  $service_hasstatus        = $::sysctl::params::service_hasstatus,
+  $service_hasrestart       = $::sysctl::params::service_hasrestart,
+  $package_name             = $::sysctl::params::package_name,
+  $package_ensure           = $::sysctl::params::package_ensure,
 
-  exec { 'sysctl':
-    command     => 'sysctl -p',
-    refreshonly => true,
-    path        => '/sbin/',
-    subscribe   => File['sysctl_conf'],
-  }
+) inherits sysctl::params {
+
+  contain sysctl::install
+  contain sysctl::config
+
+  Class['sysctl::install'] ->
+  Class['sysctl::config']
 }
