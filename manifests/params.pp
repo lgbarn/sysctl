@@ -52,5 +52,15 @@ class sysctl::params {
   $sysctl_file_owner       = 'root'
   $sysctl_file_group       = 'root'
   $sysctl_file_mode        = '0640'
+  $sysctl_config_file      = '/etc/sysctl_conf'
+  $sysctl_config_file_ensure      = 'file'
+  $sysctl_config_file_group      = 'root'
+  $sysctl_config_file_mode      = '0644'
+  $sysctl_config_file_owner      = 'root'
+  $sysctl_config_file_path      = '/etc/sysctl.conf'
+  $sysctl_config_exec      = 'sysctl'
+  $sysctl_config_exec_command      = 'sysctl -p'
+  $sysctl_config_exec_refreshonly      = true
+  $sysctl_config_exec_path      = '/sbin/'
 
 }

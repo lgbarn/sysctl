@@ -11,18 +11,19 @@
 # Sample Usage:
 #
 class sysctl::config {
-  file { 'sysctl_conf':
-    ensure => 'file',
-    group  => '0',
-    mode   => '0644',
-    owner  => '0',
-    path   => '/etc/sysctl.conf',
+  file { $::sysctl::params::sysctl_config_file:
+    ensure => $::sysctl::params::sysctl_config_file_ensure,
+    group  => $::sysctl::params::sysctl_config_file_group,
+    mode   => $::sysctl::params::sysctl_config_file_mode,
+    owner  => $::sysctl::params::sysctl_config_file_owner,
+#    path   => $::sysctl::params::sysctl_config_file_path,
   }
 
-  exec { 'sysctl':
-    command     => 'sysctl -p',
-    refreshonly => true,
-    path        => '/sbin/',
-    subscribe   => File['sysctl_conf'],
+  exec { $::sysctl::params::sysctl_config_exec:
+    command     => $::sysctl::params::sysctl_config_exec_command,
+    refreshonly => $::sysctl::params::sysctl_config_exec_refreshonly,
+    path        => $::sysctl::params::sysctl_config_exec_path,
+    subscribe   => File[$::sysctl::params::sysctl_config_file],
+    #subscribe   => File['/etc/sysctl_conf'],
   }
 }
