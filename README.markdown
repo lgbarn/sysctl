@@ -1,3 +1,0 @@
-# sysctl #
-
-This is the sysctl module. It provides...
